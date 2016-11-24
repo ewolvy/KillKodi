@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Matar Kodi</string>
-    <string name="set_kodi_address">Dirección o IP de la máquina Kodi</string>
     <string name="settings_title">Configuración</string>
+    <string name="confirm_title">Confirmación</string>
+    <string name="confirm_message">¿Estás seguro/a que quieres matar Kodi?</string>
+    <string name="set_kodi_address_summary">Dirección o IP de la máquina Kodi</string>
+    <string name="set_kodi_address">Dirección de Kodi</string>
+    <string name="set_kodi_address_dialog">Introduce el valor</string>
+    <string name="set_kodi_port">Puerto de Kodi</string>
+    <string name="set_kodi_port_summary">Puerto de la máquina Kodi</string>
+    <string name="set_kodi_port_dialog">Introducir valor</string>
 </resources>

@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Kill Kodi</string>
     <string name="settings_title">Settings</string>
-    <string name="set_kodi_address">Kodi machine address or IP</string>
+    <string name="confirm_title">Confirmation</string>
+    <string name="confirm_message">Are you sure you want to kill Kodi?</string>
+    <string name="set_kodi_address_summary">Kodi machine address or IP</string>
+    <string name="set_kodi_address">Kodi address</string>
+    <string name="set_kodi_address_dialog">Input value</string>
+    <string name="set_kodi_port">Kodi port</string>
+    <string name="set_kodi_port_summary">Kodi machine port</string>
+    <string name="set_kodi_port_dialog">Input value</string>
 </resources>

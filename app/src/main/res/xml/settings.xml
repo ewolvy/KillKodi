@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <EditTextPreference
+        android:key="kodi_address"
         android:title="@string/set_kodi_address"
-        android:singleLine="false" />
+        android:summary="@string/set_kodi_address_summary"
+        android:dialogTitle="@string/set_kodi_address_dialog"/>
+    <EditTextPreference
+        android:key="kodi_port"
+        android:title="@string/set_kodi_port"
+        android:summary="@string/set_kodi_port_summary"
+        android:dialogTitle="@string/set_kodi_port_dialog"
+        android:numeric="decimal"/>
 </PreferenceScreen>

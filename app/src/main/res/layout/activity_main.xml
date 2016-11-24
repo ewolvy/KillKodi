@@ -15,5 +15,6 @@
         android:layout_height="wrap_content"
         android:text=""
         android:background="@drawable/circle"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:onClick="KillKodi"/>
 </RelativeLayout>

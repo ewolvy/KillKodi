@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kill Kodi</string>
+    <string name="app_name">Matar Kodi</string>
+    <string name="set_kodi_address">Dirección o IP de la máquina Kodi</string>
     <string name="settings_title">Configuración</string>
 </resources>

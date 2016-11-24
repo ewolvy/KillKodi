@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Kill Kodi</string>
+    <string name="app_name">Kill Kodi</string>
     <string name="settings_title">Settings</string>
+    <string name="set_kodi_address">Kodi machine address or IP</string>
 </resources>

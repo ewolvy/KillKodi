@@ -9,4 +9,5 @@
     <string name="set_kodi_port">Kodi port</string>
     <string name="set_kodi_port_summary">Kodi machine port</string>
     <string name="set_kodi_port_dialog">Input value</string>
+    <string name="pdialog_message">Processing...</string>
 </resources>

@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void KillKodi(View v){
-        //TODO: Code to connect to the Linux machine running Kodi
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.confirm_title))
                 .setMessage(getString(R.string.confirm_message))
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        Toast.makeText(MainActivity.this, "Yaay", Toast.LENGTH_SHORT).show();
+                        //TODO: Code to connect to the Linux machine running Kodi
+                        new KillKodiAsyncTask(MainActivity.this).execute(new KKState("ewolvy.mooo.com", 1207));
                     }})
                 .setNegativeButton(android.R.string.no, null).show();
     }

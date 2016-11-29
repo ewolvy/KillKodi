@@ -42,8 +42,13 @@ class KillKodiAsyncTask extends AsyncTask <KKState, Void, KKState>{
     protected void onPostExecute(KKState k) {
         super.onPostExecute(k);
         pDialog.dismiss();
-        Toast.makeText(context, String.valueOf(k.getIsKilled()),
-                Toast.LENGTH_SHORT).show();
+        if (k.getIsKilled()) {
+            Toast.makeText(context, context.getString(R.string.kodi_killed),
+                    Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, context.getString(R.string.kodi_alive),
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

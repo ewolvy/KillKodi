@@ -2,12 +2,15 @@ package com.mooo.ewolvy.killkodi;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,15 +40,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void KillKodi(View v){
-        new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.confirm_title))
-                .setMessage(getString(R.string.confirm_message))
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        //TODO: Use settings for address and port
-                        new KillKodiAsyncTask(MainActivity.this).execute(new KKState("something.com", 1111));
-                    }})
-                .setNegativeButton(android.R.string.no, null).show();
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final String address = sharedPrefs.getString("kodi_address", "none");
+        String stPort = sharedPrefs.getString("kodi_port", "0");
+        if (stPort.equals("")){
+            stPort = "0";
+        }
+        final int port = Integer.valueOf(stPort);
+        if ((address.isEmpty()) || (port == 0)){
+            Toast.makeText(this, getString(R.string.set_settings),
+                    Toast.LENGTH_LONG).show();
+        }else {
+            new AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.confirm_title))
+                    .setMessage(getString(R.string.confirm_message))
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            new KillKodiAsyncTask(MainActivity.this).execute(new KKState(address, port));
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, null).show();
+        }
     }
 }

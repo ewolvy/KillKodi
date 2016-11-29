@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         //TODO: Code to connect to the Linux machine running Kodi
-                        new KillKodiAsyncTask(MainActivity.this).execute(new KKState("ewolvy.mooo.com", 1207));
+                        new KillKodiAsyncTask(MainActivity.this).execute(new KKState("something.com", 1111));
                     }})
                 .setNegativeButton(android.R.string.no, null).show();
     }

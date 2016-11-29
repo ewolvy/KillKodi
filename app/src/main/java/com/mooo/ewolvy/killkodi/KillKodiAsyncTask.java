@@ -31,17 +31,17 @@ class KillKodiAsyncTask extends AsyncTask <KKState, Void, KKState>{
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        /*pDialog = new ProgressDialog (context);
+        pDialog = new ProgressDialog (context);
         pDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pDialog.setMessage(context.getString(R.string.pdialog_message));
         pDialog.setCancelable(false);
-        pDialog.show();*/
+        pDialog.show();
     }
 
     @Override
     protected void onPostExecute(KKState k) {
         super.onPostExecute(k);
-        //pDialog.dismiss();
+        pDialog.dismiss();
         Toast.makeText(context, String.valueOf(k.getIsKilled()),
                 Toast.LENGTH_SHORT).show();
     }
@@ -136,23 +136,17 @@ class KillKodiAsyncTask extends AsyncTask <KKState, Void, KKState>{
         KKState returnState = new KKState(url.getHost(), url.getPort());
         try {
             JSONObject baseJsonResponse = new JSONObject(stateJSON);
-            JSONArray featureArray = baseJsonResponse.getJSONArray("features");
 
-            // If there are results in the features array
-            if (featureArray.length() > 0) {
-                // Extract out the first feature (which is an earthquake)
-                JSONObject firstFeature = featureArray.getJSONObject(0);
-                JSONObject properties = firstFeature.getJSONObject("properties");
-
-                // Extract out the title, number of people, and perceived strength values
-                Boolean isKilled = properties.getBoolean("killed");
+            if (baseJsonResponse.length() > 0) {
+                // Extract out if is killed
+                Boolean isKilled = baseJsonResponse.getBoolean("killed");
 
                 returnState.setIsKilled(isKilled);
                 // Create a new {@link Event} object
                 return returnState;
             }
         } catch (JSONException e) {
-            Log.e(LOG_TAG, "Problem parsing the earthquake JSON results", e);
+            Log.e(LOG_TAG, "Problem parsing the JSON results", e);
         }
         return null;
     }

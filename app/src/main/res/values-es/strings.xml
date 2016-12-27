@@ -10,5 +10,8 @@
     <string name="set_kodi_port">Puerto de Kodi</string>
     <string name="set_kodi_port_summary">Puerto de la máquina Kodi</string>
     <string name="set_kodi_port_dialog">Introducir valor</string>
-    <string name="pdialog_message">Procesando...</string>
+    <string name="pdialog_message">Procesando…</string>
+    <string name="set_settings">Las opciones no están configuradas. Por favor, establece la dirección y el puerto antes de intentar cerrar Kodi</string>
+    <string name="kodi_killed">Kodi se ha cerrado con éxito</string>
+    <string name="kodi_alive">Kodi sigue ejecutándose</string>
 </resources>

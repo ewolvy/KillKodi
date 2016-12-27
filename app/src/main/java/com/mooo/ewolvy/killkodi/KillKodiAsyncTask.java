@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -87,6 +88,9 @@ class KillKodiAsyncTask extends AsyncTask <KKState, Void, KKState>{
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
             urlConnection.setRequestMethod("GET");
+            String userCredentials = "prueba:prueba";
+            String basicAuth = "Basic " + Base64.encodeToString(userCredentials.getBytes(), 0);
+            urlConnection.setRequestProperty ("Authorization", basicAuth);
             urlConnection.connect();
 
             // If the request was successful (response code 200),
